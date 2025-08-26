@@ -1,62 +1,237 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
-  <head>
+<html lang="en">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Spotify, Music, Deezer, Youtube Music, Telegram, Radio Javan">
-    <meta name="description" content="Spotdlrobot - Robot Music Downloader">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>
-	Telegram Robot Music Downloader
-	</title>
-    <link rel="stylesheet" href="bot.css" media="screen">
-<link rel="stylesheet" href="Spotdlrobot.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="bot.js" defer=""></script>
-    
-    
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i">
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Spotdlrobot",
-		"url": "index.html"
-}</script>
-    <meta property="og:title" content="Telegram Robot Music Downloader">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Spotdlrobot - Robot Music Downloader">
-    <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="index.html">
-    <meta property="og:url" content="index.html">
-  </head>
-  <body data-home-page="Spotdlrobot.html" data-home-page-title="Spotdlrobot" class="u-body">
-    <section class="u-align-left-xs u-black u-clearfix u-section-1" id="carousel_9ce4">
-      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-        <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-33 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <blockquote class="u-border-10 u-border-palette-3-base u-custom-font u-font-roboto-condensed u-text u-text-default u-text-1">spotdlrobot<br>TELEGRAM<br>ROBOT<br>music<br>downloader
-                  </blockquote>
-                  <p class="u-text u-text-default u-text-grey-50 u-text-2">A telegram robot by programmer aliilapro.<br>With this robot you can download track from sites:<br>[+] Spotify<br>[+] Deezer<br>[+] Youtube Music<br>Support Quality:<br>128, 196, 320, FLAC
-                  </p>
-                  <a href="https://t.me/spotdlrobot" class="u-btn u-button-style u-custom-color-1 u-btn-1" target="_blank">Try use robot</a>
+    <meta name="keywords" content="Spotify, Music, Deezer, Youtube Music, Telegram, Shazam, Radio Javan">
+    <meta name="description" content="Music Downloader Bot - Supports Spotify, YouTube Music, Deezer and Shazam with multiple quality options">
+    <title>MusicDLRobot - Download Music from Spotify, YouTube, Deezer & Shazam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1DB954 0%, #191414 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .wave {
+            animation: wave 3s linear infinite;
+        }
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16">
+            <nav class="flex items-center justify-between mb-16">
+                <div class="flex items-center">
+                    <i class="fab fa-spotify text-3xl mr-2"></i>
+                    <span class="text-2xl font-bold">SpotDLRobot</span>
                 </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-right-cell u-size-27 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2">
-                  <img class="u-expand-resize u-image u-image-1" src="images/221.jpg">
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="hover:text-gray-300 transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-gray-300 transition">How It Works</a>
+                    <a href="#about" class="hover:text-gray-300 transition">About</a>
+                    <a href="https://github.com/ALIILAPRO/spotdlrobot" target="_blank" class="hover:text-gray-300 transition">GitHub</a>
                 </div>
-              </div>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Download Music <span class="wave inline-block">🎵</span></h1>
+                    <p class="text-xl mb-8 text-gray-200">A Telegram bot that lets you download songs from Spotify, YouTube Music, Deezer and Shazam with multiple quality options (128kbps, 256kbps, 320kbps FLAC). Playlist support coming soon!</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://t.me/spotdlrobot" target="_blank" class="bg-white text-green-600 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold text-center transition">
+                            <i class="fab fa-telegram mr-2"></i> Try the Bot
+                        </a>
+                        <a href="https://github.com/ALIILAPRO/spotdlrobot" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-green-600 px-6 py-3 rounded-full font-semibold text-center transition">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="./images/00.png" alt="Telegram Bot" class="w-64 h-64 md:w-80 md:h-80 object-contain">
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
+
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">Amazing Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Multiple Platforms</h3>
+                    <p class="text-gray-600">Supports Spotify, YouTube Music, Deezer and Shazam - all in one bot!</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Quality Options</h3>
+                    <p class="text-gray-600">Choose from 128kbps, 256kbps, 320kbps or FLAC quality for your downloads.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Fast Processing</h3>
+                    <p class="text-gray-600">Quickly converts and delivers your music without delays.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    
-    
-  </body>
+
+    <section id="how-it-works" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">How It Works</h2>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</div>
+                            <h3 class="text-xl font-semibold">Start the Bot</h3>
+                        </div>
+                        <p class="text-gray-600 pl-11">Open Telegram and search for <span class="font-mono bg-gray-200 px-2 py-1 rounded">@spotdlrobot</span> or click the "Try the Bot" button above.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111644.png" alt="Telegram" class="w-48 h-48 object-contain">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</div>
+                            <h3 class="text-xl font-semibold">Send Music Link</h3>
+                        </div>
+                        <p class="text-gray-600 pl-11">Copy any Spotify, YouTube Music, Deezer or Shazam link and send it to the bot.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="Spotify" class="w-48 h-48 object-contain">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">3</div>
+                            <h3 class="text-xl font-semibold">Download Your Music</h3>
+                        </div>
+                        <p class="text-gray-600 pl-11">The bot will process your request and send you the audio file ready to download.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="Download" class="w-48 h-48 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">About SpotDLRobot</h2>
+            
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-gray-600 mb-6 text-lg">
+                    SpotDLRobot is an open-source Telegram bot that allows users to download music from Spotify by simply sharing a link. 
+                    It's built using  Python and PHP leverages.
+                </p>
+                <p class="text-gray-600 mb-8 text-lg">
+                    The project is completely free to use and maintained by the open-source community. 
+                    Contributions and suggestions are always welcome!
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/ALIILAPRO/spotdlrobot" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full font-semibold transition flex items-center">
+                        <i class="fab fa-github mr-2"></i> Star on GitHub
+                    </a>
+                    <a href="https://t.me/source_pro" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition flex items-center">
+                        <i class="fab fa-telegram mr-2"></i> Telegram Channel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fab fa-spotify text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">SpotDLRobot</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Download music from multiple platforms with Telegram</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/ALIILAPRO/spotdlrobot" target="_blank" class="text-gray-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://t.me/source_pro" target="_blank" class="text-gray-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2019-2025 SpotDLRobot. All rights reserved.</p>
+                <p class="mt-2">This project is not affiliated with Spotify or Telegram.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            const nav = document.querySelector('nav div:nth-child(2)');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-20');
+            nav.classList.toggle('right-6');
+            nav.classList.toggle('bg-green-600');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('rounded-lg');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('space-x-0');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
